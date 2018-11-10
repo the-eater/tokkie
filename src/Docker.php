@@ -115,6 +115,15 @@ class Docker
                 continue;
             }
 
+            if ($scope == 'registry:catalog:*') {
+                $access[] = [
+                    'type' => 'registry',
+                    'name' => 'catalog',
+                    'actions' => ['*']
+                ];
+                continue;
+            }
+
             $access[] = [
                 'type' => $scopeParts[0],
                 'name' => $scopeParts[1],
