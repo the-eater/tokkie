@@ -1,0 +1,9 @@
+# Complex rules to let git keep the directory structure but ignore all other files
+storage/*
+!storage/.gitkeep
+!storage/bundle
+storage/bundle/*
+!storage/bundle/.gitkeep
+
+.idea/
+vendor/

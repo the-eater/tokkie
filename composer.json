@@ -1,0 +1,23 @@
+{
+    "name": "eater/tokkie",
+    "description": "Docker JWT Token provider",
+    "type": "project",
+    "require": {
+        "ext-openssl": "^7.2",
+        "php": "^7.2",
+        "ext-json": "^1.6",
+        "christian-riesen/base32": "^1.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Eater\\Tokkie\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eater",
+            "email": "=@eater.me"
+        }
+    ]
+}
