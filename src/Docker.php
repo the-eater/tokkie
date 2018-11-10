@@ -119,11 +119,9 @@ class Docker
             ];
         }
 
-        error_log('Allowed scopes: ' . print_r($access, true));
-
         return $this->buildToken([
             'access' => $access
-        ]);
+        ], $expire);
     }
 
     public function authenticate($username, $password)

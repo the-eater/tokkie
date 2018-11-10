@@ -130,10 +130,6 @@ class Application
             $errors[] = $error;
         }
 
-        if (count($errors) > 0) {
-            error_log('openssl errors: ' . implode(", ", $errors));
-        }
-
         if ($ret === false) {
             throw new \Exception("{$func} failed: " . implode(", ", $errors));
         }
