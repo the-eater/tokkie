@@ -66,7 +66,7 @@ class Docker
             ]);
         }
 
-        header('Content-Type: json/application');
+        header('Content-Type: application/json');
         echo json_encode($body);
     }
 
