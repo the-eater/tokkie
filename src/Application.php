@@ -131,7 +131,7 @@ class Application
         }
 
         if ($ret === false) {
-            throw new \Exception("{$func} failed: " . implode(", ", $errors));
+            throw new \Exception("openssl failed: " . implode(", ", $errors));
         }
 
         return $ret;

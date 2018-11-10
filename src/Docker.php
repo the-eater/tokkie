@@ -60,6 +60,9 @@ class Docker
             'access_token' => $this->getToken($scopes),
         ];
 
+        // For other docker tools, like reg
+        $body['token'] = $body['access_token'];
+
         if (isset($_GET['offline_token']) && !$this->guest) {
             $body['refresh_token'] = $this->buildToken([
                 'user' => $this->userHandle
