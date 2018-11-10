@@ -16,7 +16,7 @@ class Docker
     {
         $this->application = $application;
         $this->config = $application->config['docker'];
-        $this->user = $this->config['user.guest'];
+        $this->user = ['allow' => $this->config['user.guest']];
     }
 
     public function handle()
@@ -70,7 +70,8 @@ class Docker
         echo json_encode($body);
     }
 
-    public function testAllow($repo, $actions) {
+    public function testAllow($repo, $actions)
+    {
         if ($this->user['allow'] === true) {
             return $actions;
         }
@@ -82,7 +83,8 @@ class Docker
         return [];
     }
 
-    public function buildToken($payload, $expire = 3600) {
+    public function buildToken($payload, $expire = 3600)
+    {
         $now = time();
 
         $payload = array_merge($payload, [
@@ -99,7 +101,8 @@ class Docker
         return $this->application->createToken($payload);
     }
 
-    public function getToken($scopes, $expire = 3600) {
+    public function getToken($scopes, $expire = 3600)
+    {
         $access = [];
 
         foreach ($scopes as $scope) {
